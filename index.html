@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diálogos, fragmentos y secuencias — Mujeres en la Comunicación Audiovisual</title>
+<meta name="description" content="Archivo transmedia de testimonios de mujeres de la comunicación audiovisual en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="masthead__mark">
+    <span class="masthead__mark-line">Diálogos,</span>
+    <span class="masthead__mark-line">fragmentos</span>
+    <span class="masthead__mark-line">y secuencias</span>
+  </div>
+  <p class="masthead__sub">Testimonios de mujeres de la comunicación audiovisual en Argentina</p>
+</header>
+
+<nav class="tabs" aria-label="Secciones del archivo">
+  <button class="tab" data-tab="proyecto" data-n="1" aria-current="true">El proyecto</button>
+  <button class="tab" data-tab="inventario" data-n="2">Inventario de voces</button>
+  <button class="tab" data-tab="libro" data-n="3">El libro</button>
+  <button class="tab" data-tab="presentaciones" data-n="4">Presentaciones y actividades</button>
+  <button class="tab" data-tab="trabajos" data-n="5">Trabajos de estudiantes</button>
+</nav>
+
+<main id="panels">
+
+  <!-- ============ 1. EL PROYECTO ============ -->
+  <section class="panel" id="panel-proyecto" data-panel="proyecto">
+    <div class="panel__inner grid-editorial">
+      <div class="col-main">
+        <p class="eyebrow-inline">Etiqueta 1</p>
+        <h2>El proyecto</h2>
+        <p class="lede">Esta plataforma reúne, en clave de archivo abierto, las voces de mujeres que hicieron
+        y hacen comunicación audiovisual en Argentina: pioneras, referentes contemporáneas y las nuevas
+        generaciones que investigan, producen y enseñan. Nace como trabajo colectivo de cátedra y se piensa
+        para crecer después de esta entrega — cada sección deja espacio para lo que todavía falta cargar.</p>
+        <p>El proyecto se organiza en cuatro ejes que conviven en esta misma plataforma: un inventario de voces
+        con mapa interactivo, la propuesta editorial de un libro colectivo, el registro de presentaciones y
+        actividades académicas, y una sección de trabajos realizados por estudiantes. La dirección académica
+        está a cargo de la Dra. Gabriela Cicalese.</p>
+
+        <h3 class="section-label">Mapa de la publicación</h3>
+        <ol class="pubmap">
+          <li><span class="pubmap__n">01</span><span class="pubmap__t">El proyecto</span><span class="pubmap__d">Fundamentos, equipo y marco institucional</span></li>
+          <li><span class="pubmap__n">02</span><span class="pubmap__t">Inventario de voces</span><span class="pubmap__d">Base de datos y mapa de referentes por zona y temática</span></li>
+          <li><span class="pubmap__n">03</span><span class="pubmap__t">El libro</span><span class="pubmap__d">Tapa, carátulas de sección y capítulos I–IV</span></li>
+          <li><span class="pubmap__n">04</span><span class="pubmap__t">Presentaciones y actividades</span><span class="pubmap__d">Talleres, conversatorios y eventos académicos</span></li>
+          <li><span class="pubmap__n">05</span><span class="pubmap__t">Trabajos de estudiantes</span><span class="pubmap__d">Producciones realizadas en el marco de la cátedra</span></li>
+        </ol>
+      </div>
+
+      <aside class="col-side">
+        <h3 class="section-label">Equipo editor</h3>
+        <ul class="team-list">
+          <li><span class="team-list__name">A completar</span><span class="team-list__role">Coordinación general</span></li>
+          <li><span class="team-list__name">A completar</span><span class="team-list__role">Diseño e identidad visual</span></li>
+          <li><span class="team-list__name">A completar</span><span class="team-list__role">Investigación y contenidos</span></li>
+          <li><span class="team-list__name">A completar</span><span class="team-list__role">Desarrollo de plataforma</span></li>
+        </ul>
+
+        <h3 class="section-label">Cátedras e instituciones</h3>
+        <p class="muted">Espacio reservado para instituciones, cátedras e investigadores/as involucrados en el proyecto.</p>
+
+        <h3 class="section-label">Registro fotográfico</h3>
+        <div class="photo-grid" role="group" aria-label="Fotografías de las reuniones de trabajo">
+          <div class="photo-slot">Reunión 01</div>
+          <div class="photo-slot">Reunión 02</div>
+          <div class="photo-slot">Reunión 03</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 2. INVENTARIO DE VOCES ============ -->
+  <section class="panel" id="panel-inventario" data-panel="inventario">
+    <div class="panel__inner">
+      <p class="eyebrow-inline">Etiqueta 2</p>
+      <h2>Inventario de voces</h2>
+      <p class="lede">Base de datos de referentes de la comunicación audiovisual, organizada por zona
+      geográfica y línea temática. Los datos se cargan y consultan desde Supabase; mientras se completa el
+      inventario definitivo, esta vista muestra fichas de referencia.</p>
+
+      <div class="inv-controls">
+        <input type="search" id="inv-search" placeholder="Buscar por nombre, zona o temática…" aria-label="Buscar en el inventario">
+        <select id="inv-filter" aria-label="Filtrar por temática">
+          <option value="">Todas las temáticas</option>
+        </select>
+      </div>
+
+      <p id="inv-status" class="muted small" aria-live="polite">Cargando inventario…</p>
+
+      <div class="inv-grid" id="inv-grid"></div>
+
+      <h3 class="section-label" style="margin-top:3rem">Mapa visual interactivo</h3>
+      <div class="embed-slot">
+        <p>Espacio reservado para el panel embebido (Miro / Genially / Padlet) con los nodos del inventario
+        por zona y temática.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. EL LIBRO ============ -->
+  <section class="panel" id="panel-libro" data-panel="libro">
+    <div class="panel__inner">
+      <p class="eyebrow-inline">Etiqueta 3</p>
+      <h2>El libro</h2>
+      <p class="lede">Identidad gráfica y estructura de la publicación colectiva. La tapa propone una
+      composición tipográfica sobria, con superposición de nombres de autoras e investigadoras en marca de
+      agua dinámica — pluralidad y red antes que jerarquía individual.</p>
+
+      <div class="cover-mock" aria-hidden="true">
+        <span class="cover-mock__wm">CICALESE · ROJAS · FERNÁNDEZ · TORRES · GÓMEZ</span>
+        <span class="cover-mock__title">Diálogos, fragmentos<br>y secuencias</span>
+        <span class="cover-mock__sub">Mujeres en la comunicación audiovisual</span>
+      </div>
+
+      <h3 class="section-label">Capítulos</h3>
+      <div class="chapters">
+        <article class="chapter">
+          <span class="chapter__n">I</span>
+          <h4>Surgimiento y pioneras</h4>
+          <p>Recorrido histórico y visibilización de la mujer en los medios de comunicación tradicionales.</p>
+        </article>
+        <article class="chapter">
+          <span class="chapter__n">II</span>
+          <h4>Narrativas contemporáneas</h4>
+          <p>Producción audiovisual actual: dirección, guión, montaje y nuevos soportes convergentes.</p>
+        </article>
+        <article class="chapter">
+          <span class="chapter__n">III</span>
+          <h4>Desafíos de la brecha de género</h4>
+          <p>Análisis de datos, investigación académica, equidad en los medios y transformación institucional.</p>
+        </article>
+        <article class="chapter">
+          <span class="chapter__n">IV</span>
+          <h4>Redes y futuro transmedia</h4>
+          <p>Archivo colaborativo, plataformas digitales, libre acceso y proyectos comunitarios abiertos.</p>
+        </article>
+      </div>
+
+      <h3 class="section-label">Paratexto</h3>
+      <ul class="specs-list">
+        <li><span>Tipografía de título</span><span>Fraunces, versalitas para autoras</span></li>
+        <li><span>Numeración de página</span><span>Zócalo inferior, margen exterior</span></li>
+        <li><span>Cuerpo de texto por página</span><span>≈ 320 palabras, con margen para imagen</span></li>
+        <li><span>Ilustraciones</span><span>Fotografía documental en escala de violetas</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 4. PRESENTACIONES Y ACTIVIDADES ============ -->
+  <section class="panel" id="panel-presentaciones" data-panel="presentaciones">
+    <div class="panel__inner">
+      <p class="eyebrow-inline">Etiqueta 4</p>
+      <h2>Presentaciones y actividades</h2>
+      <p class="lede">Sistematización de talleres, conversatorios y presentaciones académicas del proyecto.
+      Incluye eventos ya realizados y espacio abierto para los que ocurrirán antes de la publicación del
+      sitio — y para los que se sumen durante 2027.</p>
+
+      <div class="ev-controls">
+        <button class="ev-filter is-active" data-filter="todos">Todos</button>
+        <button class="ev-filter" data-filter="taller">Talleres y conversatorios</button>
+        <button class="ev-filter" data-filter="academico">Eventos académicos</button>
+        <button class="ev-filter" data-filter="proximo">Próximos (2027)</button>
+      </div>
+
+      <div class="ev-list" id="ev-list"></div>
+    </div>
+  </section>
+
+  <!-- ============ 5. TRABAJOS DE ESTUDIANTES ============ -->
+  <section class="panel" id="panel-trabajos" data-panel="trabajos">
+    <div class="panel__inner">
+      <p class="eyebrow-inline">Etiqueta 5</p>
+      <h2>Trabajos de estudiantes</h2>
+      <p class="lede">Producciones realizadas en el marco de la cátedra, organizadas por tipo de trabajo.
+      El orden de cada listado respeta la selección docente — quien navega puede empezar por el primero de
+      cada categoría y seguir en orden.</p>
+
+      <div class="subtabs" role="tablist" aria-label="Tipos de trabajo">
+        <button class="subtab is-active" data-sub="ensayos">Ensayos</button>
+        <button class="subtab" data-sub="audiovisual">Producción audiovisual</button>
+        <button class="subtab" data-sub="semblanzas">Semblanzas</button>
+      </div>
+
+      <div class="sub-panel is-active" data-subpanel="ensayos">
+        <p class="muted">Trabajos escritos de análisis e investigación, en formato PDF de hasta 3 páginas.</p>
+        <ol class="work-list" id="work-ensayos"></ol>
+      </div>
+      <div class="sub-panel" data-subpanel="audiovisual">
+        <p class="muted">Piezas audiovisuales breves y microdocumentales producidos por los grupos de trabajo.</p>
+        <ol class="work-list" id="work-audiovisual"></ol>
+      </div>
+      <div class="sub-panel" data-subpanel="semblanzas">
+        <p class="muted">Semblanzas escritas de referentes del inventario de voces, en elaboración paralela.</p>
+        <ol class="work-list" id="work-semblanzas"></ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Mujeres en la Comunicación Audiovisual — Proyecto Transmedia · Dirección académica: Dra. Gabriela Cicalese</p>
+</footer>
+
+<script type="module" src="js/supabaseClient.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
