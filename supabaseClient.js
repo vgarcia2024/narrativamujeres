@@ -11,8 +11,9 @@
 //    /supabase/schema.sql)
 // ============================================================
 
-export const SUPABASE_URL = "https://TU-PROYECTO.supabase.co";
-export const SUPABASE_ANON_KEY = "TU-ANON-KEY-PUBLICA";
+// Acá reemplazamos con tu URL y tu clave pública anónima:
+export const SUPABASE_URL = "https://kndmbkrprizeawcwaayz.supabase.co";
+export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtuZG1ia3Jwcml6ZWF3Y3dhYXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg1Mzg3ODMsImV4cCI6MjEwNDExNDc4M30.1SNLGBihidmzZeFDg8q7GJUDihYUAyTLczTKiOTP2v0";
 
 let client = null;
 
