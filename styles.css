@@ -56,10 +56,14 @@ a{ color:var(--terracota); }
 /* ============================================================
    MASTHEAD — single orchestrated entrance
    ============================================================ */
-.masthead{
-  padding: 5.5rem 6vw 3rem;
-  max-width:1200px;
+.masthead {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .masthead__mark{
   font-family:var(--serif);
   font-weight:450;
@@ -68,11 +72,12 @@ a{ color:var(--terracota); }
   color:var(--violet-deep);
   overflow:hidden;
 }
-.masthead__mark-line{
-  display:block;
-  transform:translateY(110%);
-  opacity:0;
-  animation: rise .9s var(--ease) forwards;
+
+.masthead__mark-line {
+  display: inline-block; /* Para que queden uno al lado del otro o bajen suavemente */
+  font-size: 2.5rem; /* Achicamos el tamaño (antes seguro era más grande) */
+  margin: 0 0.2rem;
+  color: var(--color-violeta); /* Le damos el color del proyecto */
 }
 .masthead__mark-line:nth-child(1){ animation-delay:.05s; }
 .masthead__mark-line:nth-child(2){ animation-delay:.16s; color:var(--terracota); font-style:italic; }
@@ -82,15 +87,11 @@ a{ color:var(--terracota); }
   to{ transform:translateY(0); opacity:1; }
 }
 
-.masthead__sub{
-  margin-top:1.4rem;
-  font-family:var(--sans);
-  font-size:1.05rem;
-  color:#6b5760;
-  max-width:46ch;
-  opacity:0;
-  animation: fadein .8s var(--ease) forwards;
-  animation-delay:.55s;
+.masthead__sub {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin-top: 1rem;
 }
 @keyframes fadein{ to{ opacity:1; } }
 
