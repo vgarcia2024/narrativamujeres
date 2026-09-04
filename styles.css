@@ -329,3 +329,158 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
   padding:2.4rem 6vw; border-top:1px solid var(--line);
   font-size:.82rem; color:#a89aa0;
 }
+
+/* =========================================
+   VARIABLES DE COLOR Y FUENTES (Según PDF)
+========================================= */
+:root {
+  /* Paleta cromática requerida */
+  --color-violeta: #5c2069; /* Púrpura/Violeta */
+  --color-terracota: #d45d3a; /* Terracota/Cálidos */
+  --color-gris-neutro: #f4f4f4; /* Blanco/Gris Neutro */
+  --color-texto: #222222;
+  
+  --font-titulos: 'Fraunces', serif;
+  --font-textos: 'Work Sans', sans-serif;
+}
+
+body {
+  background-color: var(--color-gris-neutro);
+  color: var(--color-texto);
+  font-family: var(--font-textos);
+  line-height: 1.6;
+}
+
+/* =========================================
+   ANIMACIONES TIPO "WEB DOC" (Fade In Up)
+========================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ocultar paneles por defecto y animarlos al estar activos */
+.panel {
+  display: none;
+  padding: 4rem 2rem;
+}
+
+.panel.is-active {
+  display: block;
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* =========================================
+   ESTILOS DE NAVEGACIÓN (TABS)
+========================================= */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 2px solid #ddd;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-family: var(--font-textos);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Línea animada inferior al seleccionar pestaña */
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-terracota);
+  transition: width 0.3s ease;
+}
+
+.tab:hover {
+  color: var(--color-violeta);
+}
+
+.tab[aria-current="true"] {
+  color: var(--color-terracota);
+}
+
+.tab[aria-current="true"]::after {
+  width: 100%;
+}
+
+/* =========================================
+   MARCA DE AGUA DINÁMICA (Sección Libro)
+========================================= */
+/* El PDF pide "superposición de nombres en marcas de agua dinámicas" */
+.cover-mock {
+  position: relative;
+  background-color: var(--color-violeta);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.cover-mock__wm {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.05); /* Muy sutil */
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  pointer-events: none;
+  font-family: var(--font-titulos);
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, -50%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+.cover-mock__title {
+  position: relative;
+  font-family: var(--font-titulos);
+  font-size: 3rem;
+  line-height: 1.1;
+  z-index: 1;
+}
+
+/* =========================================
+   TARJETAS (Para Inventario y Trabajos)
+========================================= */
+.voz-card {
+  background: white;
+  border-left: 4px solid var(--color-terracota);
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.voz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(92, 32, 105, 0.15); /* Sombra violeta suave */
+}
