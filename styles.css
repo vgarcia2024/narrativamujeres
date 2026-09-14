@@ -12,10 +12,10 @@
   --paper:      #FAF6F1;
   --paper-2:    #F1E9DF;
   --line:       rgba(34,16,25,0.14);
-
+ 
   --serif: "Fraunces", "Iowan Old Style", serif;
   --sans:  "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-
+ 
   --radius: 3px;
   --ease: cubic-bezier(.22,.68,.35,1);
 }
