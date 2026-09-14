@@ -12,10 +12,10 @@
   --paper:      #FAF6F1;
   --paper-2:    #F1E9DF;
   --line:       rgba(34,16,25,0.14);
- 
+
   --serif: "Fraunces", "Iowan Old Style", serif;
   --sans:  "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
- 
+
   --radius: 3px;
   --ease: cubic-bezier(.22,.68,.35,1);
 }
@@ -335,9 +335,10 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
    VARIABLES DE COLOR Y FUENTES (Según PDF)
 ========================================= */
 :root {
-  /* Paleta cromática requerida */
-  --color-violeta: #5c2069; /* Púrpura/Violeta */
-  --color-terracota: #d45d3a; /* Terracota/Cálidos */
+  /* Paleta cromática requerida por la cátedra */
+  --color-violeta: #6E2A85; /* color-1: Púrpura/Violeta */
+  --color-terracota: #856E2A; /* color-2: Mostaza/Cálidos */
+  --color-verde: #2A856E; /* color-3: Verde azulado */
   --color-gris-neutro: #f4f4f4; /* Blanco/Gris Neutro */
   --color-texto: #222222;
   
