@@ -3,11 +3,13 @@
    ============================================================ */
 :root{
   --ink:        #221019;
-  --violet-deep:#3D1638;
-  --violet:     #6B2F63;
-  --violet-soft:#9C6D96;
-  --terracota:  #A8532F;
-  --terracota-soft:#D3A184;
+  --violet-deep:#431A52;
+  --violet:     #6E2A85;
+  --violet-soft:#B98FCB;
+  --terracota:  #856E2A;
+  --terracota-soft:#C7B173;
+  --verde:      #2A856E;
+  --verde-soft: #7FBBA6;
   --sand:       #E8DDCC;
   --paper:      #FAF6F1;
   --paper-2:    #F1E9DF;
@@ -77,7 +79,7 @@ a{ color:var(--terracota); }
   display: inline-block; /* Para que queden uno al lado del otro o bajen suavemente */
   font-size: 2.5rem; /* Achicamos el tamaño (antes seguro era más grande) */
   margin: 0 0.2rem;
-  color: var(--color-violeta); /* Le damos el color del proyecto */
+  color: var(--violet); /* Le damos el color del proyecto */
 }
 .masthead__mark-line:nth-child(1){ animation-delay:.05s; }
 .masthead__mark-line:nth-child(2){ animation-delay:.16s; color:var(--terracota); font-style:italic; }
@@ -105,6 +107,13 @@ a{ color:var(--terracota); }
   padding:0 6vw;
   background:var(--paper);
   border-bottom:1px solid var(--line);
+}
+.tabs::after{
+  content:'';
+  position:absolute; left:0; right:0; bottom:-4px;
+  height:4px;
+  background:linear-gradient(to right,
+    var(--violet) 0 33.33%, var(--terracota) 33.33% 66.66%, var(--verde) 66.66% 100%);
 }
 .tab{
   font-family:var(--sans);
@@ -267,8 +276,8 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
 
 .chapters{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
 @media (max-width:700px){ .chapters{ grid-template-columns:1fr; } }
-.chapter{ border-top:1px solid var(--line); padding-top:1rem; }
-.chapter__n{ font-family:var(--serif); font-style:italic; font-size:1.6rem; color:var(--terracota); }
+.chapter{ border-top:3px solid var(--verde); padding-top:1rem; }
+.chapter__n{ font-family:var(--serif); font-style:italic; font-size:1.6rem; color:var(--verde); }
 .chapter h4{ margin:.2rem 0 .4rem; }
 .chapter p{ color:#5a4b52; font-size:.94rem; margin:0; }
 
@@ -304,7 +313,7 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
   font-size:.72rem; font-weight:600; padding:.25rem .6rem; border-radius:100px;
   background:var(--sand); color:var(--violet-deep); white-space:nowrap; height:fit-content;
 }
-.ev-item__tag.proximo{ background:var(--violet-deep); color:var(--paper); }
+.ev-item__tag.proximo{ background:var(--verde); color:var(--paper); }
 
 /* ============================================================
    TRABAJOS DE ESTUDIANTES
@@ -316,7 +325,7 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
   transition:color .2s;
 }
 .subtab:hover{ color:var(--violet-deep); }
-.subtab.is-active{ color:var(--terracota); border-bottom-color:var(--terracota); }
+.subtab.is-active{ color:var(--verde); border-bottom-color:var(--verde); }
 
 .sub-panel{ display:none; padding-top:1.4rem; }
 .sub-panel.is-active{ display:block; }
@@ -343,158 +352,6 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
   font-size:.82rem; color:#a89aa0;
 }
 
-/* =========================================
-   VARIABLES DE COLOR Y FUENTES (Según PDF)
-========================================= */
-:root {
-  /* Paleta cromática requerida por la cátedra */
-  --color-violeta: #6E2A85; /* color-1: Púrpura/Violeta */
-  --color-terracota: #856E2A; /* color-2: Mostaza/Cálidos */
-  --color-verde: #2A856E; /* color-3: Verde azulado */
-  --color-gris-neutro: #f4f4f4; /* Blanco/Gris Neutro */
-  --color-texto: #222222;
-  
-  --font-titulos: 'Fraunces', serif;
-  --font-textos: 'Work Sans', sans-serif;
-}
-
-body {
-  background-color: var(--color-gris-neutro);
-  color: var(--color-texto);
-  font-family: var(--font-textos);
-  line-height: 1.6;
-}
-
-/* =========================================
-   ANIMACIONES TIPO "WEB DOC" (Fade In Up)
-========================================= */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ocultar paneles por defecto y animarlos al estar activos */
-.panel {
-  display: none;
-  padding: 4rem 2rem;
-}
-
-.panel.is-active {
-  display: block;
-  animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-/* =========================================
-   ESTILOS DE NAVEGACIÓN (TABS)
-========================================= */
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  border-bottom: 2px solid #ddd;
-  background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 1rem;
-}
-
-.tab {
-  background: none;
-  border: none;
-  font-family: var(--font-textos);
-  font-size: 1rem;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-  padding-bottom: 0.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-/* Línea animada inferior al seleccionar pestaña */
-.tab::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--color-terracota);
-  transition: width 0.3s ease;
-}
-
-.tab:hover {
-  color: var(--color-violeta);
-}
-
-.tab[aria-current="true"] {
-  color: var(--color-terracota);
-}
-
-.tab[aria-current="true"]::after {
-  width: 100%;
-}
-
-/* =========================================
-   MARCA DE AGUA DINÁMICA (Sección Libro)
-========================================= */
-/* El PDF pide "superposición de nombres en marcas de agua dinámicas" */
-.cover-mock {
-  position: relative;
-  background-color: var(--color-violeta);
-  color: white;
-  padding: 6rem 2rem;
-  text-align: center;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.cover-mock__wm {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.05); /* Muy sutil */
-  white-space: nowrap;
-  animation: marquee 20s linear infinite;
-  pointer-events: none;
-  font-family: var(--font-titulos);
-}
-
-@keyframes marquee {
-  0% { transform: translate(0, -50%); }
-  100% { transform: translate(-50%, -50%); }
-}
-
-.cover-mock__title {
-  position: relative;
-  font-family: var(--font-titulos);
-  font-size: 3rem;
-  line-height: 1.1;
-  z-index: 1;
-}
-
-/* =========================================
-   TARJETAS (Para Inventario y Trabajos)
-========================================= */
-.voz-card {
-  background: white;
-  border-left: 4px solid var(--color-terracota);
-  padding: 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.voz-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(92, 32, 105, 0.15); /* Sombra violeta suave */
-}
+/* Nota: la paleta oficial de la cátedra (violeta #6E2A85 / mostaza #856E2A /
+   verde #2A856E) vive directamente en los tokens --violet / --terracota /
+   --verde de arriba, para que todo el sitio use una sola fuente de verdad. */
