@@ -66,7 +66,7 @@ a{ color:var(--terracota); }
   align-items: center;
 }
 
-.masthead__logo{ height:56px; width:auto; object-fit:contain; margin-bottom:1.4rem; }
+.masthead__logo{ height:76px; width:auto; object-fit:contain; margin-bottom:1.4rem; }
 
 .masthead__mark{
   font-family:var(--serif);
