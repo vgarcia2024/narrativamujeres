@@ -56,7 +56,10 @@ const FALLBACK_TRABAJOS = {
     { titulo: "Genealogía de directoras argentinas 1960–2000", autoras: "A completar", url: "#" },
   ],
   audiovisual: [
-    { titulo: "Microdocumental: voces detrás de escena", autoras: "A completar", url: "#" },
+    { titulo: "Reseña — Sabrina Farji", autoras: "A completar", url: "https://youtu.be/hfgvl24qNiE" },
+    { titulo: "Reseña — Bernarda Llorente", autoras: "A completar", url: "https://youtu.be/7HCGbgCChKM" },
+    { titulo: "Reseña — La TV de María Herminia Avellaneda", autoras: "A completar", url: "https://youtu.be/aYjILTzujbs" },
+    { titulo: "Reseña — Corazón de cámara: la obra de Virna Molina", autoras: "A completar", url: "https://youtu.be/l-ueq5eYIjc" },
   ],
   semblanzas: [
     { titulo: "Semblanza en elaboración", autoras: "A completar", url: "#" },
