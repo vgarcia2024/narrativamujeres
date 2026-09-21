@@ -51,15 +51,15 @@ const FALLBACK_EVENTOS = [
 ];
 
 const FALLBACK_TRABAJOS = {
-  ensayos: [
-    { titulo: "Brecha de género en los equipos técnicos de rodaje", autoras: "A completar", url: "#" },
-    { titulo: "Genealogía de directoras argentinas 1960–2000", autoras: "A completar", url: "#" },
-  ],
   audiovisual: [
     { titulo: "Reseña — Sabrina Farji", autoras: "A completar", url: "https://youtu.be/hfgvl24qNiE" },
     { titulo: "Reseña — Bernarda Llorente", autoras: "A completar", url: "https://youtu.be/7HCGbgCChKM" },
     { titulo: "Reseña — La TV de María Herminia Avellaneda", autoras: "A completar", url: "https://youtu.be/aYjILTzujbs" },
     { titulo: "Reseña — Corazón de cámara: la obra de Virna Molina", autoras: "A completar", url: "https://youtu.be/l-ueq5eYIjc" },
+  ],
+  ensayos: [
+    { titulo: "Brecha de género en los equipos técnicos de rodaje", autoras: "A completar", url: "#" },
+    { titulo: "Genealogía de directoras argentinas 1960–2000", autoras: "A completar", url: "#" },
   ],
   semblanzas: [
     { titulo: "Semblanza en elaboración", autoras: "A completar", url: "#" },
@@ -240,9 +240,9 @@ async function loadTrabajos() {
     return;
   }
 
-  ["ensayos", "audiovisual", "semblanzas"].forEach(cat => {
-    renderTrabajos(`work-${cat}`, data.filter(t => t.categoria === cat));
-  });
+  ["audiovisual", "ensayos", "semblanzas"].forEach(cat => {
+  renderTrabajos(`work-${cat}`, data.filter(t => t.categoria === cat));
+});
 }
 
 loadTrabajos();
