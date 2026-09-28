@@ -379,3 +379,22 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
 /* Nota: la paleta oficial de la cátedra (violeta #6E2A85 / mostaza #856E2A /
    verde #2A856E) vive directamente en los tokens --violet / --terracota /
    --verde de arriba, para que todo el sitio use una sola fuente de verdad. */
+
+.seccion-ilustracion {
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.seccion-ilustracion img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent);
+  background: #f7f5ec;
+}
+
+@media (max-width: 600px) {
+  .seccion-ilustracion { margin: 1.25rem auto; }
+  .seccion-ilustracion img { border-radius: 8px; }
+}
