@@ -398,3 +398,28 @@ main{ padding:0 6vw 5rem; max-width:1200px; margin:0 auto; }
   .seccion-ilustracion { margin: 1.25rem auto; }
   .seccion-ilustracion img { border-radius: 8px; }
 }
+
+/* El libro: tapa a la izquierda, secciones a la derecha */
+.libro-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.libro-hero .cover-frame {
+  margin: 0;
+}
+.libro-hero .section-label {
+  margin-top: 0;
+}
+.libro-hero .chapters {
+  display: grid;
+  grid-template-columns: 1fr; /* las 4 secciones apiladas a la derecha */
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .libro-hero {
+    grid-template-columns: 1fr; /* en celu vuelve a apilarse */
+  }
+}
